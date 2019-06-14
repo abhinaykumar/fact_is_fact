@@ -1,8 +1,9 @@
 # FactIsFact
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/fact_is_fact`. To experiment with that code, run `bin/console` for an interactive prompt.
+This gem returns a fact about any number provided. It is useful when you want 
+some random trivia or facts to be displayed about a number, on your website.
 
-TODO: Delete this and the text above, and describe your gem
+P.S: Gem internally uses `numbersapi.com` to return the results.
 
 ## Installation
 
@@ -21,8 +22,11 @@ Or install it yourself as:
     $ gem install fact_is_fact
 
 ## Usage
-
-TODO: Write usage instructions here
+Currently it only supports Random trivia about a number.
+```ruby
+FactIsFact::Random.new(number: 42).trivia
+#=> "42 is the answer to the Ultimate Question of Life, the Universe, and Everything."
+```
 
 ## Development
 
