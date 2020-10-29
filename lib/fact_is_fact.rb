@@ -1,7 +1,6 @@
 require 'net/http'
 
 class FactIsFact
-  VERSION = '1.0.0'.freeze
   BASE_URI = 'http://numbersapi.com'.freeze
   TYPE = %w[trivia math year date].freeze
 

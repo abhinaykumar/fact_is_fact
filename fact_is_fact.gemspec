@@ -1,8 +1,9 @@
 require './lib/fact_is_fact'
+require './lib/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'fact_is_fact'
-  spec.version       = FactIsFact::VERSION
+  spec.version       = VERSION
   spec.authors       = ['Abhinay']
   spec.email         = ['abhinay302@gmail.com']
 
@@ -16,9 +17,9 @@ Gem::Specification.new do |spec|
   if spec.respond_to?(:metadata)
     spec.metadata['allowed_push_host'] = 'https://rubygems.org'
 
-    spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = "https://github.com/abhinaykumar/fact_is_fact"
-    spec.metadata["changelog_uri"] = "Put your gem's CHANGELOG.md URL here."
+    spec.metadata['homepage_uri'] = spec.homepage
+    spec.metadata['source_code_uri'] = 'https://github.com/abhinaykumar/fact_is_fact'
+    spec.metadata['changelog_uri'] = 'https://github.com/abhinaykumar/fact_is_fact/blob/master/CHANGELOG.md'
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
@@ -33,7 +34,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency 'bundler', '~> 1.17'
+  spec.add_development_dependency 'bundler', '2.1.4'
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec', '~> 3.8.0'
 end
