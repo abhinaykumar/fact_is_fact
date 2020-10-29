@@ -22,11 +22,11 @@ Or install it yourself as:
     $ gem install fact_is_fact
 
 ## Usage
-* type is one of trivia, math, date, or year. Defaults to trivia if omitted.
-* number is
-    * an integer, or
-    * the keyword random, for which we will try to return a random available fact, or
-    * a day of year in the form month/day (eg. 2/29, 1/09, 04/1), if type is date
+* `type` is one of `trivia`, `math`, `date`, or `year`. Defaults to `trivia` if omitted.
+* `number` is
+    * an `integer`, or
+    * the keyword `random`, for which we will try to return a random available fact, or
+    * a `day` of year in the form `month/day` (eg. 2/29, 1/09, 04/1), if `type` is `date`
 
 examples
 ```ruby
