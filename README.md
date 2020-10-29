@@ -22,10 +22,29 @@ Or install it yourself as:
     $ gem install fact_is_fact
 
 ## Usage
-Currently it only supports Random trivia about a number.
+* type is one of trivia, math, date, or year. Defaults to trivia if omitted.
+* number is
+    * an integer, or
+    * the keyword random, for which we will try to return a random available fact, or
+    * a day of year in the form month/day (eg. 2/29, 1/09, 04/1), if type is date
+
+examples
 ```ruby
-FactIsFact::Random.new(number: 42).trivia
-#=> "42 is the answer to the Ultimate Question of Life, the Universe, and Everything."
+# math fact
+FactIsFact.return(type: 'math', number: '1234')
+#=> "1234 is the smallest 4-digit number with increasing digits."
+
+# date fact
+FactIsFact.return(type: 'date', number: '2/29')
+#=> "February 29th is the day in 1892 that St. Petersburg, Florida is incorporated."
+
+# year fact
+FactIsFact.return(type: 'year', number: '1234')
+#=> "1234 is the year that the Manden region raises against the Kaniaga kingdom."
+
+# trivia
+FactIsFact.return(type: 'trivia', number: 'random')
+#=> "150000000 is the number of items held in the British Library."
 ```
 
 ## Development
