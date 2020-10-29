@@ -1,8 +1,18 @@
-require 'fact_is_fact/version'
+require 'net/http'
 
-module FactIsFact
-  require 'net/http'
-  require 'fact_is_fact/random'
+class FactIsFact
+  VERSION = '1.0.0'.freeze
+  BASE_URI = 'http://numbersapi.com'.freeze
+  TYPE = %w[trivia math year date].freeze
+
+  class << self
+    def return(type:, number:)
+      return 'not a valid type' unless TYPE.include?(type)
+
+      number_facts_uri = URI("#{BASE_URI}/#{number}/#{type}")
+      Net::HTTP.get(number_facts_uri)
+    end
+  end
 
   class Error < StandardError; end
 end

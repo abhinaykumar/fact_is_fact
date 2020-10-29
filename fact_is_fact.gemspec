@@ -1,18 +1,15 @@
-
-lib = File.expand_path("../lib", __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "fact_is_fact/version"
+require './lib/fact_is_fact'
 
 Gem::Specification.new do |spec|
-  spec.name          = "fact_is_fact"
+  spec.name          = 'fact_is_fact'
   spec.version       = FactIsFact::VERSION
-  spec.authors       = ["Aks"]
-  spec.email         = ["abhinay302@gmail.com"]
+  spec.authors       = ['Abhinay']
+  spec.email         = ['abhinay302@gmail.com']
 
-  spec.summary       = %q{Stating the fact with ease}
-  spec.description   = %q{library helps you display random facts}
-  spec.homepage      = "https://github.com/abhinaykumar/fact_is_fact"
-  spec.license       = "MIT"
+  spec.summary       = 'This gem allows users to get a random trivia about a number or date or a year'
+  spec.description   = 'library helps you display random facts about a number or date or a year.'
+  spec.homepage      = 'https://github.com/abhinaykumar/fact_is_fact'
+  spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
