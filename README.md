@@ -3,7 +3,7 @@
 This gem returns a fact about any number provided. It is useful when you want 
 some random trivia or facts to be displayed about a number, on your website.
 
-P.S: Gem internally uses `numbersapi.com` to return the results.
+P.S: Gem internally uses http://numbersapi.com/ to return the results.
 
 ## Installation
 
