@@ -5,10 +5,11 @@ class FactIsFact
   TYPE = %w[trivia math year date].freeze
 
   class << self
-    def return(type:, number:)
+    def return(type:, number:, **options)
       return 'not a valid type' unless TYPE.include?(type)
 
-      number_facts_uri = URI("#{BASE_URI}/#{number}/#{type}")
+      query_params = URI.encode_www_form(options)
+      number_facts_uri = URI("#{BASE_URI}/#{number}/#{type}?#{query_params}")
       Net::HTTP.get(number_facts_uri)
     end
   end
