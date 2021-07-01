@@ -1,3 +1,6 @@
+## Version 1.2.1
+Documentation for batch request
+
 ## Version 1.1.0
 Ability to pass optional params with the request
 

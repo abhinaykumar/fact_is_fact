@@ -103,13 +103,34 @@ FactIsFact.return(type: 'math', number: '123123123', default: 'no facts found')
 #=> "no facts found"
 ```
 
-## MIN AND MAX
+### MIN AND MAX
 Restrict the range of values returned to the inclusive range [min, max] when random is given as the number.
 
 ```ruby
 FactIsFact.return(type: 'trivia', number: 'random', min: 10, max: 20)
 #=> "16 is the number of personality types in the Myers-Briggs classification system."
 ```
+
+### BATCH REQUESTS
+To get facts about multiple numbers in one request, specify ranges for number.
+
+A number range (inclusive) is specified as min..max. Separate multiple ranges and individual numbers with , (a comma).
+
+The response format will always be a JSON map from numbers to facts, of at most 100 numbers. The query parameter json may still be used to specify whether individual facts will be returned as string literals or JSON objects.
+
+```ruby
+FactIsFact.return(type: 'math', number: '1..3', json: '')
+=> "{\n \"1\": \"1 is the most common leading digit in many sets of data, a consequence of Benford's law.\",\n \"2\": \"2 is a primorial, as well as its own factorial.\",\n \"3\": \"3 is the fourth open meandric number.\"\n}"
+
+FactIsFact.return(type: 'math', number: '1..3,10,13,15', json: '')
+=> "{\n \"1\": \"1 is also the first and second numbers in the Fibonacci sequence and is the first number in many other mathematical sequences.\",\n \"2\": \"2 is the number of n-Queens Problem solutions for n = 4.\",\n \"3\": \"3 is the first unique prime due to the properties of its reciprocal.\",\n \"10\": \"10 is the aliquot sum of only one number the discrete semiprime 14.\",\n \"13\": \"13 is the number of Archimedian solids.\",\n \"15\": \"15 is a triangular number, a hexagonal number, a pentatope number and the 4th Bell number.\"\n}"
+
+FactIsFact.return(type: 'year', number: '1..3,10,13,15', json: '')
+=> "{\n \"1\": \"1 is the year that Emperor Ping of Han China begins his reign and Wang Mang is re-instated as regent by Grand Empress Dowager Wang.\",\n \"2\": \"2 is the year that Cedeides becomes Archon of Athens.\",\n \"3\": \"3 is the year that Augustus adopts his grandson, Gaius Caesar, with the expectation that he will succeed him.\",\n \"10\": \"10 is the year that Ovid completes Tristia (the \\\"Sorrows\\\", 5 books) and Epistulae ex Ponto (Letters from the Black Sea, 4 books) describing the sadness of banishment.\",\n \"13\": \"13 is the year that Strabo publishes his book on the shape of the Earth.\",\n \"15\": \"15 is the year that Germanicus captures Thusnelda, the wife of Arminius.\"\n}"
+```
+
+
+
 
 ## Development
 
